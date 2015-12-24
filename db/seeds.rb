@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Todo.create!(title: 'first', completed: false, order: 0)
+Todo.create!(title: 'second', completed: true, order: 1)
+Todo.create!(title: 'third', completed: false, order: 2)
+Todo.create!(title: 'fourth', completed: true, order: 3)

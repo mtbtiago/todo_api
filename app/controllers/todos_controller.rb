@@ -1,3 +1,8 @@
+# server: run bin/rails s # starts at port 3000 as usual
+# client: go to /home/tiago/dev/js/todomvc/examples/backbone and run `ruby -run -e httpd . -p 9000`
+# server is from:
+#   https://github.com/tastejs/todomvc
+# backbone sample, just modifing /home/tiago/dev/js/todomvc/examples/backbone/js/collections/todos.js to change server url
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :update, :destroy]
 
@@ -39,13 +44,14 @@ class TodosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_todo
-      @todo = Todo.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def todo_params
-      params.require(:todo).permit(:title, :completed, :order)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_todo
+    @todo = Todo.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def todo_params
+    params.require(:todo).permit(:title, :completed, :order)
+  end
 end
